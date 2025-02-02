@@ -7,10 +7,9 @@ function SideBar(props) {
   const [isOpen, setIsOpen] = useState(false);
   const { t } = useTranslation();
 
-  // Function to close both the sidebar and dropdown
   const closeAll = () => {
-    handleSideBar(); // Close sidebar
-    setIsOpen(false); // Close dropdown
+    handleSideBar();
+    setIsOpen(false);
   };
 
   const toggleDropdown = () => {
@@ -26,12 +25,12 @@ function SideBar(props) {
           </Link>
         </li>
 
-        <div className="products-sideBar" >
-        <li >
-          <Link to={'/products'} onClick={closeAll} className="sidebar-link0">
-            {t('nav_products')}
-          </Link>
-        </li>
+        <div className="products-sideBar">
+          <li>
+            <Link to={'/products'} onClick={closeAll} className="sidebar-link0">
+              {t('nav_products')}
+            </Link>
+          </li>
         </div>
 
         <li className="dropdown">

@@ -66,7 +66,7 @@ a {
   width: 80% !important;
   margin-right: 0;
   margin-left: 0;
-  /* Ensure inputs take full width */
+
   box-sizing: border-box;
 }
 
@@ -89,14 +89,14 @@ a {
 .cont_error > h1 {
   font-weight: 700;
   font-size: clamp(3rem, 10vw, 8rem);
-  color: #333; /* لون داكن للنص الرئيسي */
+  color: #333;
   margin: 0;
 }
 
 .cont_error > p {
   font-weight: 300;
   font-size: 1.5rem;
-  color: #6c757d; /* لون رمادي خفيف للنصوص الفرعية */
+  color: #6c757d;
   margin: 10px 0;
 }
 
@@ -840,7 +840,6 @@ nav {
   }
 }
 
-/* From Uiverse.io by MikeAndrewDesigner */
 .e-card {
   background: transparent;
   box-shadow: 0px 8px 28px -9px #36c5fd;
@@ -1176,7 +1175,6 @@ nav {
     }
   }
 
-  /* استعلام الوسائط لجعل اثنين من البطاقات جنبًا إلى جنب على الشاشات الصغيرة */
   @media (max-width: 500px) {
     .what-we-do .cards {
       justify-content: space-around;
@@ -1269,7 +1267,7 @@ nav {
       flex: 1;
 
       h2 {
-        font-size: 2rem; /* حجم العنوان */
+        font-size: 2rem;
         font-weight: 600;
         text-align: center;
         margin-bottom: 30px;
@@ -1277,7 +1275,7 @@ nav {
       }
 
       p {
-        font-size: 1.2rem; /* حجم النص */
+        font-size: 1.2rem;
       }
     }
   }
@@ -1287,32 +1285,32 @@ nav {
     flex-direction: column;
   }
   .service-image {
-    max-width: 200px; /* تغيير أقصى عرض للصورة */
-    min-width: 200px; /* تغيير أقل عرض للصورة */
-    flex: 0 0 100px; /* تعيين عرض مرن للصورة */
-    display: flex; /* استخدام الفليكس لجعل الصورة تتوسط */
-    justify-content: center; /* توسيط الصورة أفقياً */
-    align-items: center; /* توسيط الصورة عمودياً */
+    max-width: 200px;
+    min-width: 200px;
+    flex: 0 0 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     img {
-      width: 250px !important; /* عرض الصورة 50 بكسل */
-      height: 250px !important; /* ارتفاع الصورة 50 بكسل */
+      width: 250px !important;
+      height: 250px !important;
       margin-top: -70px;
     }
   }
 
   .content {
-    width: 100%; /* جعل المحتوى بعرض 100% */
-    text-align: center; /* محاذاة العنوان إلى المركز */
+    width: 100%;
+    text-align: center;
 
     h2 {
-      font-size: 1.6rem !important; /* تقليل حجم العنوان */
-      margin: 10px 0; /* إضافة مساحة حول العنوان */
+      font-size: 1.6rem !important;
+      margin: 10px 0;
       font-weight: 600;
     }
     p {
-      font-size: 0.9rem; /* تقليل حجم النص */
-      text-align: start; /* محاذاة النص على أساس اللغة */
+      font-size: 0.9rem;
+      text-align: start;
       margin-right: 20px;
       margin-left: 20px;
     }
@@ -1484,9 +1482,6 @@ nav {
   }
 }
 
-/* وسائل الإعلام (Media Queries) */
-
-/* إخفاء الصورة على الشاشات الأصغر من 768px */
 @media (max-width: 768px) {
   .about-us .about-us-image {
     display: none;
@@ -1497,7 +1492,6 @@ nav {
   }
 }
 
-/* عرض الصورة على الشاشات الأكبر من 768px */
 @media (min-width: 769px) {
   .about-us .about-us-image {
     display: block;
@@ -1753,9 +1747,8 @@ nav {
     background-color: #f3f3f4;
     height: 55px;
 
-    direction: ltr; /* الوضع الافتراضي للغة الإنجليزية */
+    direction: ltr;
 
-    /* إضافة تصميم خاص للغة العربية */
     &[lang='ar'] {
       direction: rtl;
     }
@@ -1876,13 +1869,9 @@ nav {
 
     img {
       width: 100%;
-      /* Ensure the image takes up the full width of the container */
       height: 180px;
-      /* Maintain aspect ratio */
       max-width: 100%;
-      /* Prevent the image from exceeding the container's width */
       max-height: 90%;
-      /* Prevent the image from exceeding the container's height */
       object-fit: contain;
       transition: 0.5s;
       -webkit-transition: 0.5s;
@@ -2003,19 +1992,19 @@ nav {
         border-radius: 10px;
         background-color: #006cf0;
         color: white;
-        border: none; /* إزالة الحدود الزائدة */
-        display: inline-flex; /* لجعل الزر مرنًا */
-        justify-content: center; /* لمحاذاة المحتوى أفقيًا في المنتصف */
-        align-items: center; /* لمحاذاة المحتوى عموديًا في المنتصف */
+        border: none;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
       }
 
       a {
-        display: inline-block; /* لجعل الرابط يعمل كزر */
-        padding: 0; /* إزالة الحشو الافتراضي من الرابط */
-        color: white; /* لون النص */
-        text-decoration: none; /* إزالة التسطير */
-        width: 100%; /* جعل الرابط يأخذ نفس عرض الزر */
-        box-sizing: border-box; /* التأكد من حساب الحواف في الحجم */
+        display: inline-block;
+        padding: 0;
+        color: white;
+        text-decoration: none;
+        width: 100%;
+        box-sizing: border-box;
       }
 
       .product-name {
@@ -2027,8 +2016,6 @@ nav {
 }
 
 /* Footer */
-
-/*** START FOOTER BOTTOM STYLE ***/
 
 .widget_section {
   padding: 25px 0;
@@ -2149,7 +2136,6 @@ nav {
   box-sizing: border-box;
 }
 
-/* الحاوية الرئيسية للكاروسيل */
 .carousel-container {
   position: relative;
   width: 80%;
@@ -2192,14 +2178,12 @@ nav {
   border-radius: 20px;
 }
 
-/* تنسيق أسهم التحكم */
 .carousel-control-next,
 .carousel-control-prev {
   border: none;
   background: none;
 }
 
-/* حجم الأيقونات وسماكتها بدون الخلفية الدائرية */
 .carousel-control-next-icon,
 .carousel-control-prev-icon {
   filter: invert(5) !important;
@@ -2209,45 +2193,39 @@ nav {
   background: none;
 }
 
-/* تكبير الخط داخل الأيقونات وزيادة السماكة */
 .carousel-control-next-icon::before,
 .carousel-control-prev-icon::before {
   font-size: 30px !important;
   font-weight: bold !important;
 }
 
-/* تنسيق داخلي للكاروسيل */
 .carousel-inner {
   border-radius: 20px !important;
 }
 
-/* استعلامات الوسائط لجعل التصميم متجاوب */
-
-/* للشاشات الكبيرة (مثل الكمبيوترات) */
 @media (min-width: 751px) {
   .landing .container {
     display: flex !important;
-    justify-content: center !important; /* لضبط العناصر في منتصف المحور الأفقي */
-    align-items: center !important; /* لضبط العناصر في منتصف المحور العمودي */
+    justify-content: center !important;
+    align-items: center !important;
 
     .landing-image {
       img {
         max-width: 98% !important;
-        margin: -20px auto 20px auto!important;
+        margin: -20px auto 20px auto !important;
         display: block;
       }
     }
   }
 
-
   .landing .container {
     & .hero-content {
-        button {
-            margin-top: 10px;
-            margin-bottom: 25px;    
-        }
+      button {
+        margin-top: 10px;
+        margin-bottom: 25px;
+      }
     }
-}
+  }
   .products {
     grid-template-columns: repeat(auto-fill, minmax(240px, 240px));
   }
@@ -2259,7 +2237,6 @@ nav {
     width: 90%;
   }
 
-  /* أسهم التحكم بموضع -120px */
   .carousel-control-next {
     right: -120px !important;
   }
@@ -2269,12 +2246,11 @@ nav {
   }
 }
 
-/* للشاشات المتوسطة (مثل الأجهزة اللوحية) */
 @media (min-width: 451px) and (max-width: 1120px) {
   .landing .container {
     display: flex !important;
-    justify-content: center !important; /* لضبط العناصر في منتصف المحور الأفقي */
-    align-items: center !important; /* لضبط العناصر في منتصف المحور العمودي */
+    justify-content: center !important;
+    align-items: center !important;
 
     .landing-image {
       img {
@@ -2304,7 +2280,6 @@ nav {
     width: 90%;
   }
 
-  /* أسهم التحكم بموضع -80px */
   .carousel-control-next {
     right: -85px !important;
   }
@@ -2314,12 +2289,11 @@ nav {
   }
 }
 
-/* للشاشات الصغيرة (مثل الهواتف) */
 @media (max-width: 450px) {
   .landing .container {
     display: flex !important;
-    justify-content: center !important; /* لضبط العناصر في منتصف المحور الأفقي */
-    align-items: center !important; /* لضبط العناصر في منتصف المحور العمودي */
+    justify-content: center !important;
+    align-items: center !important;
 
     .landing-image {
       img {
@@ -2327,7 +2301,6 @@ nav {
         margin: -20px auto 20px auto !important;
         display: block;
       }
-
     }
   }
 
@@ -2349,7 +2322,6 @@ nav {
     width: 96%;
   }
 
-  /* إخفاء الأسهم في الشاشات الصغيرة */
   .carousel-control-next,
   .carousel-control-prev {
     display: none !important;
@@ -2389,16 +2361,16 @@ input:hover {
 
 .icon10 {
   position: absolute;
-  left: 6rem; /* المسافة من اليسار - لشاشة الكمبيوتر */
-  right: 6rem; /* المسافة من اليمين - لشاشة الكمبيوتر */
-  top: 30%; /* للمركز العمودي */
-  transform: translateY(-50%); /* لضبط الأيقونة في منتصف الحقل */
+  left: 6rem;
+  right: 6rem;
+  top: 30%;
+  transform: translateY(-50%);
   color: #9e9ea7;
   width: 1rem;
   height: 1rem;
   margin: 0;
   padding: 0;
-  pointer-events: none; /* لضمان عدم تداخل الأيقونة مع التفاعل */
+  pointer-events: none;
 }
 
 @media (max-width: 764px) {
@@ -2444,7 +2416,7 @@ input:hover {
 .pageServices {
   padding: 20px;
   width: 90%;
-  margin: 0 auto; /* Center the container */
+  margin: 0 auto;
 }
 
 .tit {
@@ -2469,7 +2441,7 @@ input:hover {
   padding: 20px;
   border-radius: 15px;
   margin-bottom: 25px;
-  box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.1); /* Change opacity for better visibility */
+  box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.1);
   width: 100%;
 }
 
@@ -2497,7 +2469,7 @@ input:hover {
 .pageServices p {
   font-size: 1rem;
   color: #555;
-  margin: 20px 10%; /* Use percentage for better responsiveness */
+  margin: 20px 10%;
 }
 
 .pageServices a {
@@ -2523,14 +2495,14 @@ input:hover {
 
 #whatsapp-button {
   position: fixed;
-  bottom: 20px; /* المسافة من أسفل الصفحة */
+  bottom: 20px;
   left: 15px;
-  z-index: 100; /* تأكد من أن الزر يظهر فوق العناصر الأخرى */
+  z-index: 100;
 }
 
 #whatsapp-button img {
-  width: 75px; /* عرض الزر */
-  height: 75px; /* ارتفاع الزر */
+  width: 75px;
+  height: 75px;
 }
 
 @media (max-width: 768px) {
@@ -2573,13 +2545,13 @@ input:hover {
 
   #whatsapp-button {
     position: fixed;
-    bottom: 10px; /* المسافة من أسفل الصفحة */
+    bottom: 10px;
     left: 5px;
-    z-index: 100; /* تأكد من أن الزر يظهر فوق العناصر الأخرى */
+    z-index: 100;
   }
   #whatsapp-button img {
-    width: 60px; /* عرض الزر */
-    height: 60px; /* ارتفاع الزر */
+    width: 60px;
+    height: 60px;
   }
 }
 
@@ -2598,8 +2570,8 @@ input:hover {
   margin-right: 5px;
 }
 .dropdown-toggle:hover {
-  background-color: #68a5ff; /* تأثير التمرير */
-  box-shadow:  -6px 0px 0 0px #005ac2e8;
+  background-color: #68a5ff;
+  box-shadow: -6px 0px 0 0px #005ac2e8;
 }
 
 .dropdown-list {
@@ -2641,7 +2613,7 @@ input:hover {
 }
 
 .language-select:hover {
-  background-color: #68a5ff; /* تأثير التمرير */
+  background-color: #68a5ff;
 }
 
 .language-dropdown {
@@ -2659,7 +2631,7 @@ input:hover {
 }
 
 .language-option {
-  padding: 8px 8px; /* خفض عرض المسافة الداخلية قليلاً */
+  padding: 8px 8px;
   color: #ffffff;
   cursor: pointer;
   text-align: center;
@@ -2667,20 +2639,18 @@ input:hover {
 }
 
 .language-option:hover {
-  background-color: #68a5ff; /* تأثير التمرير على الخيارات */
+  background-color: #68a5ff;
   border-radius: 5px;
 }
 
 .arrow {
-  font-size: 14px; /* حجم السهم */
+  font-size: 14px;
 }
 
-/* لتنسيق السهم */
 .arrow {
-  margin-left: 5px; /* المسافة بين اللغة والسهم */
+  margin-left: 5px;
 }
 
-/* Products section styling */
 .products-sideBar li {
   background-color: #2643c2;
   border-radius: 5px;
@@ -2691,4 +2661,3 @@ input:hover {
   font-size: 16px;
   font-weight: 900;
 }
-

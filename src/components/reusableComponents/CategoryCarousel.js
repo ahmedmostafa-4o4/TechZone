@@ -20,19 +20,18 @@ function CategoryCarousel(props) {
   const scrollLeft = () => {
     carouselRef.current.scrollBy({
       left: -140,
-      behavior: 'smooth',
+      behavior: 'smooth'
     });
   };
 
   const scrollRight = () => {
     carouselRef.current.scrollBy({
       left: 140,
-      behavior: 'smooth',
+      behavior: 'smooth'
     });
   };
 
   const fetchCategories = async () => {
-    // Fetch data from the API and set it to state
     axios.get(categoriesUrl).then((res) => setCategory(res.data));
   };
 
@@ -40,15 +39,14 @@ function CategoryCarousel(props) {
     fetchCategories();
   }, []);
 
-  // Mouse drag variables
   let isDragging = false;
   let startX;
-  let scrollPosition; // تغيير اسم المتغير هنا
+  let scrollPosition;
 
   const onMouseDown = (e) => {
     isDragging = true;
     startX = e.pageX - carouselRef.current.offsetLeft;
-    scrollPosition = carouselRef.current.scrollLeft; // تحديث المتغير الجديد
+    scrollPosition = carouselRef.current.scrollLeft;
   };
 
   const onMouseLeave = () => {
@@ -63,8 +61,8 @@ function CategoryCarousel(props) {
     if (!isDragging) return;
     e.preventDefault();
     const x = e.pageX - carouselRef.current.offsetLeft;
-    const walk = (x - startX) * 2; // The multiplier controls the scroll speed
-    carouselRef.current.scrollLeft = scrollPosition - walk; // استخدام المتغير الجديد
+    const walk = (x - startX) * 2;
+    carouselRef.current.scrollLeft = scrollPosition - walk;
   };
 
   return (
@@ -84,7 +82,10 @@ function CategoryCarousel(props) {
       >
         {category.length
           ? category.map((category, index) => (
-              <button key={index} onClick={(e) => handleCategories(e.target.textContent)}>
+              <button
+                key={index}
+                onClick={(e) => handleCategories(e.target.textContent)}
+              >
                 {category.title}
               </button>
             ))

@@ -1,7 +1,14 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faRocket, faServer, faCode, faMobileAlt, faSearch, faHandshake } from "@fortawesome/free-solid-svg-icons";
-import { Container, Carousel } from "react-bootstrap";
-import WhatWedo from "./WhatWeDo";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faRocket,
+  faServer,
+  faCode,
+  faMobileAlt,
+  faSearch,
+  faHandshake
+} from '@fortawesome/free-solid-svg-icons';
+import { Container, Carousel } from 'react-bootstrap';
+import WhatWedo from './WhatWeDo';
 import { useTranslation } from 'react-i18next';
 import { useEffect, useState } from 'react';
 
@@ -30,17 +37,53 @@ function Services() {
             <h1>{t('services_title')}</h1>
           </div>
 
-          {/* عرض الكروت بشكل عادي على الشاشات الكبيرة */}
           {!isMobile ? (
-            <div className="cards-container" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
+            <div
+              className="cards-container"
+              style={{
+                display: 'flex',
+                flexWrap: 'wrap',
+                justifyContent: 'center'
+              }}
+            >
               {[
-                { icon: faRocket, title: t('service_fast_performance'), desc: t('service_fast_performance_desc') },
-                { icon: faServer, title: t('service_reliable_hosting'), desc: t('service_reliable_hosting_desc') },
-                { icon: faCode, title: t('service_development'), desc: t('service_development_desc') },
-                { icon: faMobileAlt, title: t('service_innovative_apps'), desc: t('service_innovative_apps_desc') },
-                { icon: faSearch, title: t('service_effective_seo'), desc: t('service_effective_seo_desc') },
+                {
+                  icon: faRocket,
+                  title: t('service_fast_performance'),
+                  desc: t('service_fast_performance_desc')
+                },
+                {
+                  icon: faServer,
+                  title: t('service_reliable_hosting'),
+                  desc: t('service_reliable_hosting_desc')
+                },
+                {
+                  icon: faCode,
+                  title: t('service_development'),
+                  desc: t('service_development_desc')
+                },
+                {
+                  icon: faMobileAlt,
+                  title: t('service_innovative_apps'),
+                  desc: t('service_innovative_apps_desc')
+                },
+                {
+                  icon: faSearch,
+                  title: t('service_effective_seo'),
+                  desc: t('service_effective_seo_desc')
+                }
               ].map((service, index) => (
-                <div key={index} className="e-card" style={{ margin: '10px', width: '200px', textAlign: 'center', position: 'relative', zIndex: 1 }}>
+                <div
+                  key={index}
+                  className="e-card"
+                  style={{
+                    margin: '10px',
+                    width: '200px',
+                    textAlign: 'center',
+                    position: 'relative',
+                    zIndex: 1
+                  }}
+                >
                   <div className="image"></div>
                   <div className="wave"></div>
                   <div className="wave"></div>
@@ -56,18 +99,46 @@ function Services() {
               ))}
             </div>
           ) : (
-            // عرض الـ Carousel على الشاشات الصغيرة
-            <div className="carousel-container" >
+            <div className="carousel-container">
               <Carousel interval={2500}>
                 {[
-                  { icon: faRocket, title: t('service_fast_performance'), desc: t('service_fast_performance_desc') },
-                  { icon: faServer, title: t('service_reliable_hosting'), desc: t('service_reliable_hosting_desc') },
-                  { icon: faCode, title: t('service_development'), desc: t('service_development_desc') },
-                  { icon: faMobileAlt, title: t('service_innovative_apps'), desc: t('service_innovative_apps_desc') },
-                  { icon: faSearch, title: t('service_effective_seo'), desc: t('service_effective_seo_desc') },
+                  {
+                    icon: faRocket,
+                    title: t('service_fast_performance'),
+                    desc: t('service_fast_performance_desc')
+                  },
+                  {
+                    icon: faServer,
+                    title: t('service_reliable_hosting'),
+                    desc: t('service_reliable_hosting_desc')
+                  },
+                  {
+                    icon: faCode,
+                    title: t('service_development'),
+                    desc: t('service_development_desc')
+                  },
+                  {
+                    icon: faMobileAlt,
+                    title: t('service_innovative_apps'),
+                    desc: t('service_innovative_apps_desc')
+                  },
+                  {
+                    icon: faSearch,
+                    title: t('service_effective_seo'),
+                    desc: t('service_effective_seo_desc')
+                  }
                 ].map((service, index) => (
                   <Carousel.Item key={index}>
-                    <div className="e-carde" style={{ margin: '-35px auto', width: '300px', textAlign: 'center', position: 'relative', zIndex: 1 }}>
+                    <div
+                      className="e-carde"
+                      style={{
+                        margin: '-35px auto',
+                        width: '300px',
+                        textAlign: 'center',
+                        position: 'relative',
+                        zIndex: 1
+                      }}
+                    >
                       <div className="image"></div>
                       <div className="wave"></div>
                       <div className="wave"></div>

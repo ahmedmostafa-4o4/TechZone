@@ -4,39 +4,34 @@ import { useTranslation } from 'react-i18next';
 function LanguageSwitcher() {
   const { i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
-  const dropdownRef = useRef(null); // Reference to the dropdown element
+  const dropdownRef = useRef(null);
 
-  // Function to detect the browser language or set default to 'en'
   const detectLanguage = () => {
-    const userLang = navigator.language || navigator.userLanguage; // Get browser language
-    const supportedLanguages = ['en', 'ar', 'it']; // Supported languages in the app
+    const userLang = navigator.language || navigator.userLanguage;
+    const supportedLanguages = ['en', 'ar', 'it'];
 
-    // Check if the browser language is supported, else default to 'en'
     if (supportedLanguages.includes(userLang.substring(0, 2))) {
-      return userLang.substring(0, 2); // Return the first two characters (e.g., 'en')
+      return userLang.substring(0, 2);
     } else {
-      return 'en'; // Default to English if not sure
+      return 'en';
     }
   };
 
   useEffect(() => {
     const defaultLang = detectLanguage();
-    i18n.changeLanguage(defaultLang); // Set the detected or default language
-    document.body.dir = defaultLang === 'ar' ? 'rtl' : 'ltr'; // Adjust text direction
+    i18n.changeLanguage(defaultLang);
+    document.body.dir = defaultLang === 'ar' ? 'rtl' : 'ltr';
   }, [i18n]);
 
-  // Function to close the dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setIsOpen(false); // Close dropdown if clicking outside
+        setIsOpen(false);
       }
     };
 
-    // Add event listener for clicks outside
     document.addEventListener('mousedown', handleClickOutside);
     return () => {
-      // Cleanup event listener
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
@@ -48,7 +43,7 @@ function LanguageSwitcher() {
   const handleLanguageChange = (lang) => {
     i18n.changeLanguage(lang);
     document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
-    setIsOpen(false); // Close the dropdown after selecting a language
+    setIsOpen(false);
   };
 
   return (

@@ -2,8 +2,8 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
-import Loader from './Loader';
-import LoadingPage from './LoadingPage';
+import Loader from '../reusableComponents/Loader';
+import LoadingPage from '../reusableComponents/LoadingPage';
 
 function ProductPage() {
   const [product, setProduct] = useState(null);
@@ -21,7 +21,6 @@ function ProductPage() {
   // const placeOrderPopup = () => {
   //   Swal.fire({
   //     title: 'Place your order',
-  //     // Ensures the width is fully responsive
   //     showClass: {
   //       popup: `animate__animated animate__fadeInUp animate__faster`
   //     },
@@ -59,7 +58,6 @@ function ProductPage() {
   //     if (result.isConfirmed) {
   //       const totalPrice = (+product.price * result.value.quantity).toFixed(1);
   //       setLoading(true);
-  //       // Send data to the server
   //       axios
   //         .post(
   //           'http://127.0.0.1:8000/api/place-order',
@@ -116,7 +114,12 @@ function ProductPage() {
               <p className="product-name">{product.name}</p>
               <p className="description">{product.description}</p>
               <p className="price">{product.price} EGP</p>
-              <button> <a href={product.url} style={{color:"white" }} >Place Now</a> </button>
+              <button>
+                {' '}
+                <a href={product.url} style={{ color: 'white' }}>
+                  Place Now
+                </a>{' '}
+              </button>
             </div>
           </Container>
         ) : (

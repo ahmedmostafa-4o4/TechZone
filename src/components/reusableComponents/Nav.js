@@ -2,13 +2,12 @@ import { Container } from 'react-bootstrap';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import MenuOpenIcon from '@mui/icons-material/MenuOpen';
 import { useTranslation } from 'react-i18next';
-import LanguageSwitcher from './LanguageSwitcher';
+import LanguageSwitcher from '../LanguageSwitcher';
 
 function Nav(props) {
   const { handleSideBar } = props;
   const { t } = useTranslation();
 
-  // استخدم useLocation لتحديد الصفحة الحالية
   const location = useLocation();
   const isHomePage = location.pathname === '/';
 

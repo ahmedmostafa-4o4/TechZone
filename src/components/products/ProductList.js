@@ -1,37 +1,34 @@
 import { Container } from 'react-bootstrap';
-import CategoryCarousel from './CategoryCarousel';
+import CategoryCarousel from '../reusableComponents/CategoryCarouselts/CategoryCarousel';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import Product from './Product';
-import Loader from './Loader';
+import Loader from '../reusableComponents/Loader';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useTranslation } from 'react-i18next'; 
+import { useTranslation } from 'react-i18next';
 
 function ProductList() {
-  // Initialize product as an array
   const [product, setProduct] = useState([]);
-  const [filteredProduct, setFilteredProduct] = useState([]); // Create a state for filtered products
+  const [filteredProduct, setFilteredProduct] = useState([]);
   const productsUrl = 'http://127.0.0.1:8000/api/products';
 
   const { t } = useTranslation();
-  
+
   const fetchProducts = async () => {
-    // Fetch data from the API and set it to state
     axios.get(productsUrl).then((res) => {
-      const shuffledProducts = res.data
-        .sort(() => 0.5 - Math.random()); // Shuffle the products
-      setProduct(shuffledProducts); // Set shuffled products
-      setFilteredProduct(shuffledProducts); // Initially set filtered products to shuffled products
+      const shuffledProducts = res.data.sort(() => 0.5 - Math.random());
+      setProduct(shuffledProducts);
+      setFilteredProduct(shuffledProducts);
     });
   };
 
   const handleSearch = (e) => {
-    const searchValue = e.toLowerCase(); // Convert search input to lowercase
+    const searchValue = e.toLowerCase();
     const filtered = product.filter((product) =>
       product.name.toLowerCase().includes(searchValue)
-    ); // Filter products by name, ensuring case insensitivity
-    setFilteredProduct(filtered); // Update the state with filtered products
+    );
+    setFilteredProduct(filtered);
   };
 
   const handleCategories = (e) => {
@@ -54,16 +51,16 @@ function ProductList() {
         <div className="group">
           <FontAwesomeIcon icon={faMagnifyingGlass} className="icon" />
           <input
-            placeholder={t('search')} 
+            placeholder={t('search')}
             type="search"
             className="input"
-            onChange={(e) => handleSearch(e.target.value)} // Use handleSearch without additional logic here
+            onChange={(e) => handleSearch(e.target.value)}
           />
         </div>
         <CategoryCarousel handleCategories={handleCategories} />
       </Container>
 
-      {filteredProduct.length ? ( // Display the filtered products
+      {filteredProduct.length ? (
         <div className="products" id="products">
           {filteredProduct.map(
             (product) =>

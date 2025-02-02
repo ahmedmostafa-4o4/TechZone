@@ -2,15 +2,12 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useTranslation } from 'react-i18next';
 
-import {
-  faEnvelope,
-  faPhone,
-} from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { Container } from 'react-bootstrap';
-import SuccessMessage from './SuccessMessage';
+import SuccessMessage from './reusableComponents/SuccessMessage';
 
 function Contact() {
-  const {t} = useTranslation();
+  const { t } = useTranslation();
 
   const [formData, setFormData] = useState({
     firstName: '',
@@ -76,9 +73,9 @@ function Contact() {
 
   return (
     <div className="contact">
-     <Container>
+      <Container>
         <div className="title">
-        <FontAwesomeIcon icon={faPhone} />
+          <FontAwesomeIcon icon={faPhone} />
           <h1>{t('contact_us')}</h1>
         </div>
 
@@ -87,7 +84,10 @@ function Contact() {
             <h2>{t('contact_details')}:</h2>
             <ul>
               <li>
-                <FontAwesomeIcon icon={faEnvelope} style={{ color: '#5291ff' }} />
+                <FontAwesomeIcon
+                  icon={faEnvelope}
+                  style={{ color: '#5291ff' }}
+                />
                 <strong> {t('email')}:</strong>{' '}
                 <a href="mailto:info@techzone.com">info@techzone.com</a>
               </li>
@@ -117,7 +117,7 @@ function Contact() {
                   placeholder={t('first_name')}
                   value={formData.firstName}
                   onChange={handleChange}
-                  style={errors.firstName && {borderColor:"red"}}
+                  style={errors.firstName && { borderColor: 'red' }}
                 />
                 {errors.firstName && <p>{errors.firstName}</p>}
               </div>
@@ -128,7 +128,7 @@ function Contact() {
                   placeholder={t('last_name')}
                   value={formData.lastName}
                   onChange={handleChange}
-                  style={errors.lastName && {borderColor:"red"}}
+                  style={errors.lastName && { borderColor: 'red' }}
                 />
                 {errors.lastName && <p>{errors.lastName}</p>}
               </div>
@@ -141,7 +141,7 @@ function Contact() {
                 placeholder={t('email')}
                 value={formData.email}
                 onChange={handleChange}
-                style={errors.email && {borderColor:"red"}}
+                style={errors.email && { borderColor: 'red' }}
               />
               {errors.email && <p>{errors.email}</p>}
             </div>
@@ -154,7 +154,7 @@ function Contact() {
                 value={formData.message}
                 onChange={handleChange}
                 name="message"
-                style={errors.message && {borderColor:"red"}}
+                style={errors.message && { borderColor: 'red' }}
               ></textarea>
               {errors.message && <p>{errors.message}</p>}
             </div>
@@ -185,4 +185,4 @@ function Contact() {
   );
 }
 
-export default Contact;  
+export default Contact;

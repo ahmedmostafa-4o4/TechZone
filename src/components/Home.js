@@ -1,17 +1,16 @@
-import ProductList10 from "./ProductList10";
-import Contact from "./Contact";
-import Landing from "./Landing";
-import Services from "./Services";
-import UncontrolledExampleTop from "./SideBarTopHome";
+import ProductList10 from './products/  ProductList10';
+import Contact from './Contact';
+import Landing from './Landing';
+import Services from './Services';
+import UncontrolledExampleTop from './SideBarTopHome';
 
 function Home() {
-
   return (
     <>
       <Landing />
-      <UncontrolledExampleTop/>
+      <UncontrolledExampleTop />
       <Services />
-      < ProductList10 />
+      <ProductList10 />
       <Contact />
     </>
   );
